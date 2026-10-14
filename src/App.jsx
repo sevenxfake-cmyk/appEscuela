@@ -2,6 +2,7 @@
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import AlumnoCard from './components/AlumnoCard/AlumnoCard';
+import Contador from './components/Contador/Contador';
 
 function App() {
   return (
@@ -17,57 +18,60 @@ function App() {
           <AlumnoCard
             nombre="Daniel Puccio"
             carrera="Desarrollo de Software"
-            estado="Matriculado"
+            estadoInicial="Matriculado"
           />
 
           <AlumnoCard
             nombre="Maria Perez"
             carrera="Diseño Gráfico"
-            estado="Inactivo"
+            estadoInicial="Inactivo"
           />
 
           <AlumnoCard
-            nombre="Adolfo Choque"
+            nombre="Carlos Mendoza"
             carrera="Administración Industrial"
-            estado="Matriculado"
+            estadoInicial="Matriculado"
           />
 
           <AlumnoCard
             nombre="Luis Fernández"
             carrera="Ingeniería de Software con IA"
-            estado="Matriculado"
+            estadoInicial="Matriculado"
           />
 
           <AlumnoCard
-            nombre="Sebastion Mendoza"
+            nombre="Ana Torres"
             carrera="Mecatrónica Industrial"
-            estado="Matriculado"
+            estadoInicial="Matriculado"
           />
 
           <AlumnoCard
             nombre="Jorge Ramírez"
             carrera="Redes y Seguridad Informática"
-            estado="Inactivo"
+            estadoInicial="Inactivo"
           />
 
           <AlumnoCard
             nombre="Lucía González"
             carrera="Administración de Empresas"
-            estado="Matriculado"
+            estadoInicial="Matriculado"
           />
 
           <AlumnoCard
-            nombre="Joel Santibañez"
+            nombre="Pedro Castillo"
             carrera="Electricidad Industrial"
-            estado="Inactivo"
+            estadoInicial="Inactivo"
           />
 
           <AlumnoCard
             nombre="Valeria Sánchez"
             carrera="Diseño y Desarrollo Web"
-            estado="Matriculado"
+            estadoInicial="Matriculado"
           />
         </div>
+
+        {/* Contador interactivo */}
+        <Contador />
       </div>
     </>
   );

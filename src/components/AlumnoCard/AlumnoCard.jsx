@@ -1,9 +1,21 @@
- // src/components/AlumnoCard.jsx
-const AlumnoCard = ({ nombre, carrera, estado }) => {
-  // Lógica para cambiar el color del badge según el estado
-  const badgeColor = estado === 'Matriculado'
-    ? 'bg-success'
-    : 'bg-secondary';
+import { useState } from 'react';
+
+const AlumnoCard = ({ nombre, carrera, estadoInicial }) => {
+  // Estado inicial recibido mediante Props
+  const [estado, setEstado] = useState(estadoInicial);
+
+  // Cambiar color según el estado
+  const badgeColor =
+    estado === 'Matriculado' ? 'bg-success' : 'bg-secondary';
+
+  // Función para cambiar el estado
+  const cambiarEstado = () => {
+    if (estado === 'Matriculado') {
+      setEstado('Inactivo');
+    } else {
+      setEstado('Matriculado');
+    }
+  };
 
   return (
     <div className="col-md-4 mb-3">
@@ -25,8 +37,11 @@ const AlumnoCard = ({ nombre, carrera, estado }) => {
             </span>
 
             <div>
-              <button className="btn btn-sm btn-outline-warning me-2">
-                Editar
+              <button
+                className="btn btn-sm btn-outline-info me-2"
+                onClick={cambiarEstado}
+              >
+                Cambiar Estado
               </button>
 
               <button className="btn btn-sm btn-outline-danger">
@@ -41,3 +56,4 @@ const AlumnoCard = ({ nombre, carrera, estado }) => {
 };
 
 export default AlumnoCard;
+
